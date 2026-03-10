@@ -92,7 +92,9 @@ def process_file(
     if output_path:
         out_path = Path(output_path)
     else:
-        out_path = in_path.parent / f"{in_path.stem}_cleaned{in_path.suffix}"
+        out_dir = in_path.parent / "_cleaned"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path = out_dir / f"{in_path.stem}_cleaned{in_path.suffix}"
 
     # 读取原文
     text = in_path.read_text(encoding="utf-8")

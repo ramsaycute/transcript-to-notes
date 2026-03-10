@@ -37,11 +37,11 @@ git clone <repo-url> ~/.claude/skills/transcript-to-notes
 
 ### 工作流程
 
-1. **预处理阶段**：运行 `scripts/preprocess.py` 对原始转录文本进行格式清理，输出 `*_cleaned.md`
+1. **预处理阶段**：运行 `scripts/preprocess.py` 对原始转录文本进行格式清理，将清理后的文件输出到 `_cleaned` 目录
 2. **语义整理阶段**：
    - 读取开头，识别场景、领域和说话人
    - 分批读取、整理并写入：语义分段 → 同音字纠错 → 口语转书面
-   - 输出结构化笔记文件 `*_notes.md`
+   - 将结构化笔记输出到 `_notes` 目录，文件名为 `*_notes.md`
 
 ## 📋 环境要求
 
